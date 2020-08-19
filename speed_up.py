@@ -1,5 +1,11 @@
 import time
 
+def verifica(n):
+  if n == 1:
+    return "Sim"
+  else:
+    return "Não"
+
 def procedure2(n):
   EhPrimo = 1
   d=2
@@ -60,11 +66,8 @@ for i in range(len(numeros)):
     t0 = time.process_time_ns()
     primo = procedure1(numeros[i])   
     soma += t0
-  if (primo == 1):
-    primo = "Sim"
-  else:
-    primo = "Não"
-  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",primo," \nseconds process time \n")
+  
+  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",verifica(primo)," \nseconds process time \n")
 soma1 = soma
 
 print("\n==========ALGORITMO 2===============")
@@ -74,24 +77,17 @@ for i in range(len(numeros)):
     t0 = time.process_time_ns()
     primo = procedure2(numeros[i])   
     soma += t0
-  if (primo == 1):
-    primo = "Sim"
-  else:
-    primo = "Não"
-  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",primo," \nseconds process 2 time \nSpeedUp: ", soma1/soma, "\n")
+ 
+  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",verifica(primo)," \nseconds process 2 time \nSpeedUp: ", soma1/soma, "\n")
 
-print("\n==========ALGORITMO 3===============")
+print("\n==========ALGORITMO 3================")
 soma = 0
 for i in range(len(numeros)):
   for j in range (30):
     t0 = time.process_time_ns()
     primo = procedure3(numeros[i])   
     soma += t0
-  if (primo == 1):
-    primo = "Sim"
-  else:
-    primo = "Não"
-  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",primo," \nseconds process 2 time \nSpeedUp: ", soma1/soma,"\n")
+  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",verifica(primo)," \nseconds process 2 time \nSpeedUp: ", soma1/soma,"\n")
 print("\n==========ALGORITMO 4===============")
 soma = 0
 for i in range(len(numeros)):
@@ -99,8 +95,5 @@ for i in range(len(numeros)):
     t0 = time.process_time_ns()
     primo = procedure4(numeros[i])   
     soma += t0
-  if (primo == 1):
-    primo = "Sim"
-  else:
-    primo = "Não"
-  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",primo," \nseconds process 2 time \nSpeedUp: ", soma1/soma,"\n")
+  
+  print("Numero: ",numeros[i],"\nCiclos: ",soma/30, "\nPrimo?",verifica(primo)," \nseconds process 2 time \nSpeedUp: ", soma1/soma,"\n")
